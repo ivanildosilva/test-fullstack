@@ -1,0 +1,68 @@
+<div class="container" align="center" ng-include="'app/partials/app-menu.html'"></div>
+<div class="container">
+	<form class="col" novalidate name="vm.frmUsuario"
+		ng-submit="vm.cadastrarUsuario()">
+		<div class="form-group">
+			<div class="form-group">
+			<div ng-show="vm.showMessage" class="{{vm.severity}} fadein fadeout">
+				<label>{{vm.summary}}</label>
+				<label>{{vm.mensagem}}</label>
+			</div>
+		</div>
+		</div>
+		<div style="padding-left: 0px">
+			<label for="nome" class="control-label">Nome</label>
+			<input class="form-control form-control-sm" name="nome" id="nome"
+				ng-model="vm.usuario.nome" required>
+			<div align="left" class="col-lg-10" style="padding-left: 0px"
+				ng-if="(vm.frmUsuario.nome.$touched && vm.frmUsuario.nome.$invalid) || vm.frmUsuario.$submitted">
+				<span ng-if="vm.frmUsuario.$error.required"
+					style="font-size: 11px; color: red">Nome Obrigatório</span>
+			</div>
+		</div>
+		</br>
+		<div style="padding-left: 0px">
+			<label for="email" class="control-label">Email</label>
+			<input class="form-control form-control-sm" name="email" id="email" type="email"
+				ng-model="vm.usuario.email" required>
+			<div align="left" class="col-lg-10" style="padding-left: 0px"
+				ng-if="(vm.frmUsuario.email.$touched && vm.frmUsuario.email.$error.required) || vm.frmUsuario.email.$error.email">
+				<span style="font-size: 11px; color: red">Email Obrigatório ou Inálido</span>
+			</div>
+
+		</div>
+		</br>
+		<div style="padding-left: 0px">
+			<label for="telefone" class="control-label">Telefone</label>
+			<input class="form-control form-control-sm" name="telefone" id="telefone"
+				ng-model="vm.usuario.telefone" required ng-minlength="14">
+			<div align="left" class="col-lg-10" style="padding-left: 0px"
+				ng-if="(vm.frmUsuario.telefone.$touched && vm.frmUsuario.telefone.$invalid) || vm.frmUsuario.$submitted">
+				<span
+					ng-if="vm.frmUsuario.$error.required && vm.frmUsuario.$error.minlength"
+					style="font-size: 11px; color: red">Telefone Obrigatório</span>
+			</div>
+		</div>
+		</br>
+		<div style="padding-left: 0px">
+			<label for="sexo" class="control-label">Sexo</label>
+			<select class="form-control" name="sexo" ng-model="vm.usuario.sexo"
+				ng-required="vm.sexo" ng-options="item for item in vm.sexo">
+				<option value="">Selecione</option>
+			</select>
+			<div align="left" class="col-lg-10" style="padding-left: 0px"
+				ng-if="(vm.frmUsuario.sexo.$touched && vm.frmUsuario.sexo.$invalid) || vm.frmUsuario.$submitted">
+				<span ng-if="vm.frmUsuario.$error.required"
+					style="font-size: 11px; color: red">Selecione o Sexo</span>
+			</div>
+		</div>
+		</br>
+
+		<div style="padding-left: 0px">
+			<button class="btn btn-primary btn-sm" style="margin-top: 15px"
+				ng-disabled="vm.frmUsuario.$invalid">Salvar Usuário</button>
+		</div>
+
+
+	</form>
+</div>

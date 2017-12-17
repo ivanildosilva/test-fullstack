@@ -11,21 +11,26 @@
 <title>Test Full Stack</title>
 
 <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css" />
+<link rel="stylesheet" type="text/css" href="/css/app.min.css" />
 
 </head>
 
 <body>
 
-	<div ui-view></div>
+	<div class="container" ui-view></div>
 
 	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
 	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
 	<script src="/vendors/angular/angular.min.js"></script>
 	<script src="/vendors/angular/angular-ui-router.min.js"></script>
+	<script src="/vendors/mask/jquery.mask.min.js"></script>
 
 	<script src="/app/app.js"></script>
 	<script src="/app/app-controller.js"></script>
+	<script src="/app/controllers/usuario.cadastro.controller.js"></script>
+	<script src="/app/controllers/usuario.edicao.controller.js"></script>
+	<script src="/app/factories/usuario.factory.min.js"></script>
+	<script src="/app/directives/message/message.js"></script>
 	<script src="/app/app-route.js"></script>
 
 </body>

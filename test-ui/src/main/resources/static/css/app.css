@@ -1,0 +1,20 @@
+#interna {
+	margin-top: 100px;
+}
+
+#td {
+	width: 15px;
+}
+
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid, select.ng-touched.ng-invalid
+	{
+	border-color: red;
+}
+
+form.ng-submitted input.ng-invalid {
+	border-color: red;
+}
+
+input.ng-touched.ng-error {
+	background-color: red;
+}
